@@ -1,1 +1,1 @@
-Simple and fast, what more?
+Simple and fast, what else?
