@@ -1,7 +1,7 @@
 import java.net.*;
 import java.util.*;
 
-public class main {
+public class translate {
 	
 	public static String translate(String to_translate, String to_langage, String from_langage){
 		String page, result, hl, sl, q;
@@ -33,6 +33,8 @@ public class main {
 		return result;
 	}
 	public static void main(String[] args){
-		System.out.print(translate("Salut toi","en","auto"));//simple example to see if it works
+		String text = "Salut toi";
+		System.out.println(text+" >> "+translate(text,"en","auto"));//simple example to see if it works
+		System.out.println(text+" >> "+translate(text,"es","auto"));
 	}
 }
