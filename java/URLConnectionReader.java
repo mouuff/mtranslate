@@ -10,7 +10,7 @@ public class URLConnectionReader {
         
         URLConnection connection = new URL(url).openConnection();
         
-		connection.setRequestProperty("Accept-Charset", charset);
+        connection.setRequestProperty("Accept-Charset", charset);
         connection.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30)");
         
         BufferedReader in = new BufferedReader(
