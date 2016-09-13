@@ -3,7 +3,7 @@ import java.util.*;
 
 public class translate {
     
-    public static String translate(String to_translate, String to_langage, String from_langage){
+    public static String translate(String to_translate, String to_language, String from_language){
         String page, result, hl, sl, q;
         
         String before_trans = "class=\"t0\">";
@@ -12,8 +12,8 @@ public class translate {
         String charset = "UTF-8";
         
         try{
-            hl = URLEncoder.encode(to_langage, charset);
-            sl = URLEncoder.encode(from_langage, charset);
+            hl = URLEncoder.encode(to_language, charset);
+            sl = URLEncoder.encode(from_language, charset);
             q = URLEncoder.encode(to_translate, charset);
         }catch(Exception e){
             e.printStackTrace();
