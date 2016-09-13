@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 import urllib.request
+import urllib.parse
 
 agent = {'User-Agent':"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30)"}
 
@@ -16,7 +17,9 @@ def translate(to_translate, to_langage="auto", langage="auto"):
     hello you alright?
     """
     before_trans = 'class="t0">'
-    link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s" % (to_langage, langage, to_translate.replace(" ", "+"))
+    link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s" % (to_langage,
+                                                               langage,
+                                                               urllib.parse.quote(to_translate))
     request = urllib.request.Request(link, headers=agent)
     page = urllib.request.urlopen(request).read().decode("utf-8")
     result = page[page.find(before_trans)+len(before_trans):]
