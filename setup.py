@@ -2,8 +2,8 @@
 from distutils.core import setup
 
 setup(
-	name = 'translator',
-	packages = ['translator'],
+	name = 'mou_translator',
+	packages = ['mou_translator'],
 	version = '1.1',
 	description = 'Translation API using Google translate',
 	author = 'Arnaud Alies',
@@ -14,7 +14,7 @@ setup(
 	classifiers = [],
 	entry_points={
           'console_scripts': [
-              'mou_translate = mou_translate.__main__:main'
+              'mou_translator = mou_translator.__main__:main'
           ]
       },
 )
