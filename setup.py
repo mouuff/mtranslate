@@ -12,4 +12,9 @@ setup(
 	download_url = 'https://github.com/mouuff/Google-Translate-API/tarball/1.1',
 	keywords = ['translate', 'translator', 'simple', 'google'],
 	classifiers = [],
+	entry_points={
+          'console_scripts': [
+              'mou_translate = mou_translate.__main__:main'
+          ]
+      },
 )
