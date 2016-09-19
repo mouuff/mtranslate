@@ -1,5 +1,3 @@
-
-__all__ = ["translate"]
-
 from core import translate
 
+__all__ = ["translate"]
