@@ -47,9 +47,8 @@ agent = {'User-Agent':
     )"}
 
 
-def translate(to_translate, to_language="auto", language="auto"):
-    """
-    Returns the translation using google translate
+def translate(to_translate, to_language="auto", from_language="auto"):
+    """Returns the translation using google translate
     you must shortcut the language you define
     (French = fr, English = en, Spanish = es, etc...)
     if not defined it will detect it or use english by default
@@ -61,12 +60,12 @@ def translate(to_translate, to_language="auto", language="auto"):
     base_link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s"
     if (sys.version_info[0] < 3):
         to_translate = urllib.pathname2url(to_translate)
-        link = base_link % (to_language, language, to_translate)
+        link = base_link % (to_language, from_language, to_translate)
         request = urllib2.Request(link, headers=agent)
         page = urllib2.urlopen(request).read()
     else:
         to_translate = urllib.parse.quote(to_translate)
-        link = base_link % (to_language, language, to_translate)
+        link = base_link % (to_language, from_language, to_translate)
         request = urllib.request.Request(link, headers=agent)
         page = urllib.request.urlopen(request).read().decode("utf-8")
     expr = r'class="t0">(.*?)<'

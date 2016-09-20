@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from core import translate
+from __future__ import absolute_import
+from .core import translate
 import sys
 
 USAGE = ("""Name: mou_translator
