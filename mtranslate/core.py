@@ -59,7 +59,7 @@ def translate(to_translate, to_language="auto", from_language="auto"):
     """
     base_link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s"
     if (sys.version_info[0] < 3):
-        to_translate = urllib.pathname2url(to_translate)
+        to_translate = urllib.quote_plus(to_translate)
         link = base_link % (to_language, from_language, to_translate)
         request = urllib2.Request(link, headers=agent)
         page = urllib2.urlopen(request).read()
