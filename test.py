@@ -6,9 +6,9 @@ from mtranslate import translate
 
 def main():
     to_translate = 'Bonjour comment allez vous?'
-    print("%s >> %s" % (to_translate, translate(to_translate)))
-    print("%s >> %s" % (to_translate, translate(to_translate, 'es')))
-    print("%s >> %s" % (to_translate, translate(to_translate, 'ar')))
+    print(translate(to_translate))
+    print(translate(to_translate, 'ar'))
+    print(translate(to_translate, 'ru'))
 
 if __name__ == '__main__':
     main()
