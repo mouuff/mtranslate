@@ -38,7 +38,7 @@ else:
     import urllib.parse
 
 agent = {'User-Agent':
-"Mozilla/4.0 (\
+         "Mozilla/4.0 (\
 compatible;\
 MSIE 6.0;\
 Windows NT 5.1;\
@@ -67,7 +67,7 @@ def translate(to_translate, to_language="auto", from_language="auto"):
     print(translate("salut tu vas bien?", "en"))
     hello you alright?
     """
-    base_link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s"
+    base_link = "http://translate.google.com/m?tl=%s&sl=%s&q=%s"
     if (sys.version_info[0] < 3):
         to_translate = urllib.quote_plus(to_translate)
         link = base_link % (to_language, from_language, to_translate)
@@ -79,7 +79,7 @@ def translate(to_translate, to_language="auto", from_language="auto"):
         request = urllib.request.Request(link, headers=agent)
         raw_data = urllib.request.urlopen(request).read()
     data = raw_data.decode("utf-8")
-    expr = r'class="t0">(.*?)<'
+    expr = r'(?s)class="(?:t0|result-container)">(.*?)<'
     re_result = re.findall(expr, data)
     if (len(re_result) == 0):
         result = ""
