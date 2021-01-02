@@ -33,7 +33,7 @@ if (sys.version_info[0] < 3):
     import urllib
     import HTMLParser
 else:
-    import html.parser
+    import html
     import urllib.request
     import urllib.parse
 
@@ -53,7 +53,7 @@ def unescape(text):
     if (sys.version_info[0] < 3):
         parser = HTMLParser.HTMLParser()
     else:
-        parser = html.parser.HTMLParser()
+        parser = html
     return (parser.unescape(text))
 
 
